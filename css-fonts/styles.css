@@ -1,0 +1,14 @@
+/* font-family: 'Noto Sans', sans-serif;
+font-family: 'Roboto', sans-serif; */
+h1, h2 {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h2 {
+  font-style: italic;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5rem;
+}
