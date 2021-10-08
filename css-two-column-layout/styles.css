@@ -33,6 +33,14 @@
   width: 750px;
 }
 
+.column-one-fourth {
+  width: 25%;
+}
+
+.column-three-fourths {
+  width: 75%;
+}
+
 .margin-bottom {
   margin-bottom: 50px;
 }
@@ -50,7 +58,7 @@ body {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   letter-spacing: 2px;
 }
 
@@ -63,13 +71,7 @@ h3 {
 img {
   width: 6.5rem;
   position: relative;
-  bottom: 60px;
-}
-
-img[src="images/software.svg"],
-img[src="images/practice.svg"] {
-  position: relative;
-  bottom: 80px;
+  bottom: 15px;
 }
 
 p {
