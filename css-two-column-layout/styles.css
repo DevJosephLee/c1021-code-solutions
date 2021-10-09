@@ -78,7 +78,7 @@ p {
   color: #595959;
 }
 
-div[class="width-85"] > p {
+.width-85 > p {
   line-height: 30px;
 }
 
