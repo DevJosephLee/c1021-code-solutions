@@ -1,4 +1,8 @@
 .container {
+  width: 100%;
+}
+
+.margin-adj {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
@@ -155,11 +159,11 @@ h3 {
   font-family: 'Avenir', sans-serif;
 }
 
-img[src="images/logo-blue.svg"] {
+.logo-blue {
   width: 200px;
 }
 
-img[src="images/logo-white.png"] {
+.logo-white {
   width: 150px;
 }
 
@@ -201,7 +205,7 @@ h1 {
 }
 
 .overlay-text > p {
-  font-size: 1.28rem;
+  font-size: 1.47rem;
   line-height: 35px;
 }
 
