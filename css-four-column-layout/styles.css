@@ -1,0 +1,52 @@
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+.column-one-fourth {
+  width: 25%;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.margin {
+  margin: 8px;
+}
+
+.margin-bottom {
+  margin-bottom: 25px;
+}
+
+.images {
+  width: 200px;
+}
+
+.icons {
+  width: 45px;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: #f7f8fa;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 0.7rem;
+}
