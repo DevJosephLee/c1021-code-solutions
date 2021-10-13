@@ -105,7 +105,7 @@ button {
 }
 
 a,
-img[src="images/logo-blue.svg"],
+.logo-blue,
 button:hover {
   cursor: pointer;
 }
