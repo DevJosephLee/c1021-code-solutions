@@ -33,6 +33,10 @@
   margin-right: auto;
 }
 
+.margin-bottom-150 {
+  margin-bottom: 150px;
+}
+
 .margin-bottom-75 {
   margin-bottom: 75px;
 }
@@ -97,6 +101,10 @@
 
 .line-height-10 {
   line-height: 10px;
+}
+
+.height-850 {
+  height: 850px;
 }
 
 button {
@@ -175,24 +183,42 @@ a {
   font-size: 1.1rem;
 }
 
-.hero-image {
-  background-image: url('images/hero.jpg');
+.hero-image,
+.hero-image-2 {
   position: relative;
   width: 100%;
   height: 700px;
   background-size: cover;
 }
 
-.overlay-text {
+.hero-image {
+  background-image: url('images/hero.jpg');
+}
+
+.hero-image-2 {
+  background-image: url('images/product/product-header.jpg');
+}
+
+.overlay-text,
+.overlay-text-2 {
   position: absolute;
   width: 50%;
   color: white;
   left: 100px;
+}
+
+.overlay-text {
   bottom: 50px;
   top: 50px;
 }
 
-.overlay {
+.overlay-text-2 {
+  bottom: 200px;
+  top: 200px;
+}
+
+.overlay,
+.overlay-2 {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
@@ -204,7 +230,8 @@ h1 {
   font-weight: 400;
 }
 
-.overlay-text > p {
+.overlay-text,
+.overlay-text-2 > p {
   font-size: 1.47rem;
   line-height: 35px;
 }
@@ -216,4 +243,9 @@ h1 {
 
 .footer-nav {
   font-size: 1.5rem;
+}
+
+.italicize {
+  font-style: italic;
+  font-weight: bold;
 }
