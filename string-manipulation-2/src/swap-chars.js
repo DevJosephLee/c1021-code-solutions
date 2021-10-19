@@ -1,10 +1,15 @@
 /* exported swapChars */
+// create storage for array version of string, and assign
+// create storage for temp value and assign arrayString at first index
+// assign array at first index to array at second index
+// assign array at second index to temp storage
+// create storage for output and convert array version of string into string version
+// give back output
 function swapChars(firstIndex, secondIndex, string) {
-  // console.log(string[firstIndex]);
-  // console.log(string[secondIndex]);
-  // var output = '';
-  // var firstSlice = string.slice(0, firstIndex);
-  // var secondSlice = string.slice(secondIndex, string.length - 1);
-  // console.log('value of firstSlice:', firstSlice);
-  // console.log('value of secondSlice:', secondSlice);
+  var arrayString = string.split('');
+  var temp = arrayString[firstIndex];
+  arrayString[firstIndex] = arrayString[secondIndex];
+  arrayString[secondIndex] = temp;
+  var output = arrayString.join('');
+  return output;
 }
