@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.justify-align-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.height-1000 {
+  height: 1000px;
+}
+
+.correct {
+  color: #18cd1b;
+  border-bottom: none;
+}
+
+.incorrect {
+  color: red;
+  border-bottom: 5px solid red;
+}
+
+.underline {
+  border-bottom: 5px solid black;
+  padding-bottom: 5px;
+}
+
+h1 {
+  font-size: 5rem;
+}
