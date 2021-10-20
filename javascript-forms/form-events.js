@@ -1,18 +1,18 @@
-var $inputText = document.querySelector('input[type="text"]');
-var $inputEmail = document.querySelector('input[type="email"]');
-var $textarea = document.querySelector('textarea');
+var $userName = document.querySelector('#user-name');
+var $userEmail = document.querySelector('#user-email');
+var $userMessage = document.querySelector('#user-message');
 
-$inputText.addEventListener('focus', handleFocus);
-$inputText.addEventListener('blur', handleBlur);
-$inputText.addEventListener('input', handleInput);
+$userName.addEventListener('focus', handleFocus);
+$userName.addEventListener('blur', handleBlur);
+$userName.addEventListener('input', handleInput);
 
-$inputEmail.addEventListener('focus', handleFocus);
-$inputEmail.addEventListener('blur', handleBlur);
-$inputEmail.addEventListener('input', handleInput);
+$userEmail.addEventListener('focus', handleFocus);
+$userEmail.addEventListener('blur', handleBlur);
+$userEmail.addEventListener('input', handleInput);
 
-$textarea.addEventListener('focus', handleFocus);
-$textarea.addEventListener('blur', handleBlur);
-$textarea.addEventListener('input', handleInput);
+$userMessage.addEventListener('focus', handleFocus);
+$userMessage.addEventListener('blur', handleBlur);
+$userMessage.addEventListener('input', handleInput);
 
 function handleFocus(event) {
   console.log('focus event fired');
