@@ -2,7 +2,7 @@ var $tabContainer = document.querySelector('.tab-container');
 var $tabNodeList = document.querySelectorAll('.tab');
 var $viewNodeList = document.querySelectorAll('.view');
 
-$tabContainer.addEventListener('click', function () {
+$tabContainer.addEventListener('click', function (event) {
   if (event.target.matches('.tab')) {
     for (var i = 0; i < $tabNodeList.length; i++) {
       if (event.target === $tabNodeList[i]) {
