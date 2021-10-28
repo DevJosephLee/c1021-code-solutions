@@ -8,12 +8,11 @@
 // give back the storage
 function take(array, count) {
   var output = [];
+  if (array.length === 0) {
+    return array;
+  }
   for (var i = 0; i < count; i++) {
-    if (array.length === 0) {
-      return [];
-    } else {
-      output.push(array[i]);
-    }
+    output.push(array[i]);
   }
   return output;
 }

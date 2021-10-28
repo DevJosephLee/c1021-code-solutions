@@ -8,12 +8,11 @@
 // give back storage
 function takeRight(array, count) {
   var output = [];
+  if (array.length === 0) {
+    return array;
+  }
   for (var i = array.length - count; i < array.length; i++) {
-    if (array.length === 0) {
-      return [];
-    } else {
-      output.push(array[i]);
-    }
+    output.push(array[i]);
   }
   return output;
 }
