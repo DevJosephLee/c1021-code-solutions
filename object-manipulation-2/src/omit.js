@@ -22,7 +22,7 @@
 //   for (var i = 0; i < entries.length; i++) {
 //     for (var j = 0; j < keys.length; j++) {
 //       if (entries[i][0] !== keys[j]) {
-// entries.splice(i, entries.length - keys.length);
+//         entries.splice(i, entries.length - keys.length);
 //         output[entries[i][0]] = entries[i][1];
 //         return output;
 //       }
@@ -30,14 +30,14 @@
 //   }
 // }
 
-// function omit(source, keys) {
-//   var output = {};
-//   for (var key in source) {
-//     for (var i = 0; i < keys.length; i++) {
-//       if (!key.includes(keys[i])) {
-
-//       }
-//     }
-//   }
-//   return output;
-// }
+function omit(source, keys) {
+  var output = {};
+  for (var key in source) {
+    if (!keys.includes(key)) {
+      output[key] = source[key];
+    }
+  }
+  return output;
+}
+// console.log(output);
+// return output;
