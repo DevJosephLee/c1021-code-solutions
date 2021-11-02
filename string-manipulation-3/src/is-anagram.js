@@ -1,35 +1,16 @@
 /* exported isAnagram */
+// create storage for alphabetized first string and assign its value
+// create storage for alphabetized second string and assign its value
+// if alphabetized first string is equal to alphabetized second string
+//  give back true
+//  otherwise,
+//  give back false
 function isAnagram(firstString, secondString) {
-  var noSpaceFirstString = firstString.split(' ');
-  var noSpaceSecondString = secondString.split(' ');
-  for (var i = 0; i < noSpaceFirstString.length; i++) {
-    // console.log(noSpaceFirstString[i]);
-    for (var j = 0; j < noSpaceSecondString.length; j++) {
-      // console.log(noSpaceSecondString[j]);
-      if (noSpaceFirstString[i] === noSpaceSecondString[j]) {
-        return true;
-      }
-    }
+  var alphabetizedFirstString = firstString.split(' ').join('').split('').sort().join('');
+  var alphabetizedSecondString = secondString.split(' ').join('').split('').sort().join('');
+  if (alphabetizedFirstString === alphabetizedSecondString) {
+    return true;
+  } else {
+    return false;
   }
-  return false;
 }
-
-// for (var i = 0; i < noSpaceFirstString.length; i++) {
-// for (var j = 0; j < noSpaceSecondString.length; j++) {
-//   if (i !== j) {
-//     return false;
-//   } else if (noSpaceFirstString[i] !== noSpaceSecondString[j]) {
-//     return false;
-//   }
-// }
-//   }
-// return true;
-
-// if (noSpaceFirstString.includes(noSpaceSecondString)) {
-//   return true;
-// } else if ()
-// if (firstString.includes(secondString) && firstString.length === secondString.length) {
-//   return true;
-// } else {
-//   return false;
-// }
