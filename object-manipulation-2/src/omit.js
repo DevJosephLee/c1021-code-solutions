@@ -39,5 +39,3 @@ function omit(source, keys) {
   }
   return output;
 }
-// console.log(output);
-// return output;
