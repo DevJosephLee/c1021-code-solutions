@@ -8,12 +8,12 @@
 
 function defaults(target, source) {
   var sourceCopy = Object.assign({}, source);
-  for (var keys in sourceCopy) {
-    for (var key in target) {
-      if (keys === key) {
-        delete source[keys];
+  for (var key in sourceCopy) {
+    for (var keys in target) {
+      if (key === keys) {
+        delete sourceCopy[key];
       }
     }
   }
-  Object.assign(target, source);
+  Object.assign(target, sourceCopy);
 }
