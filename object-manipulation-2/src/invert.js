@@ -6,6 +6,7 @@
 //   create storage for values, and assign the second indexes of the entries
 //   output at values is equal to keys
 // give back output stroage
+
 function invert(source) {
   var output = {};
   var entries = Object.entries(source);
