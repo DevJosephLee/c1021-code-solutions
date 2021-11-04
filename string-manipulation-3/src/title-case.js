@@ -13,7 +13,7 @@ function titleCase(title) {
       upperCaseWordsInArray.push(titleSplit[i][0].toUpperCase() + titleSplit[i].slice(1).toLowerCase());
     }
   }
-  // return upperCaseWordsInArray.join(' ');
+  return upperCaseWordsInArray.join(' ');
 }
 
 // console.log(title[0].toUpperCase());
