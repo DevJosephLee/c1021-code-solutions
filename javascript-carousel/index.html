@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-center align-center">
+      <i class="fas fa-chevron-left"></i>
+      <img src="images/001.png" alt="bulbasaur" class="view" data-view="bulbasaur" dataid="1">
+      <img src="images/004.png" alt="charmander" class="hidden" data-view="charmander" dataid="2">
+      <img src="images/007.png" alt="squirtle" class="hidden" data-view="squirtle" dataid="3">
+      <img src="images/025.png" alt="pikachu" class="hidden" data-view="pikachu" dataid="4">
+      <img src="images/039.png" alt="jiggly-puff" class="hidden" data-view="jiggly-puff" dataid="5">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+    <div class="button-container">
+      <div class="row justify-center margin-top">
+        <button data-view="bulbasaur" class="black" dataid="1"></button>
+        <button data-view="charmander" class="white" dataid="2"></button>
+        <button data-view="squirtle" class="white" dataid="3"></button>
+        <button data-view="pikachu" class="white" dataid="4"></button>
+        <button data-view="jiggly-puff" class="white" dataid="5"></button>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
