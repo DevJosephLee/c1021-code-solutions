@@ -1,88 +1,49 @@
 /* exported titleCase */
+
+// make a storage for output (empty string)
+// make title to array form, splitting them for spaces in between words
+// look at each item of the title in array form, beginning until the end
+// if any of the items lowercased is 'api'
+// replace that item with 'API'
+// also, if any of the items lowercased is 'javascript'
+// replace that item with 'JavaScript'
+// also, if the length of an item is greater than 3
+// replace that item with the first letter capitalized, rest is lowercased
+// also, if the any of the item's next item is 'developers'
+// replace that item with the first letter capitalized, rest is lowercased
+// make a storage for modded title, and assign that value and convert it back to string form
+// look at each item of the modded title, beginning until the end
+// if any of the item is equal to ':'
+// replace the second item right of ':' and uppercase
+// also, if any of the item is equal to '-'
+// replace the item right of '-' and uppercase
+// uppercase the first letter of the modded title, and assign it to output storage
+// give back output
+
 function titleCase(title) {
-  var upperCaseWordsInArray = [];
+  var output = '';
   var titleSplit = title.split(' ');
   for (var i = 0; i < titleSplit.length; i++) {
-    if (titleSplit[i].toLowerCase() === 'javascript') {
-      titleSplit[i] = 'JavaScript';
-    } else if (titleSplit[i].toLowerCase() === 'api') {
-      titleSplit[i] = 'API';
-    } else if (titleSplit[i].length < 4) {
-      upperCaseWordsInArray.push(titleSplit[i]);
-    } else {
-      upperCaseWordsInArray.push(titleSplit[i][0].toUpperCase() + titleSplit[i].slice(1).toLowerCase());
+    if (titleSplit[i].toLowerCase() === 'api') {
+      titleSplit.splice(i, 1, 'API');
+    } else if (titleSplit[i].toLowerCase() === 'javascript') {
+      titleSplit.splice(i, 1, 'JavaScript');
+    } else if (titleSplit[i].toLowerCase() === 'javascript:') {
+      titleSplit.splice(i, 1, 'JavaScript:');
+    } else if (titleSplit[i].length > 3) {
+      titleSplit.splice(i, 1, titleSplit[i][0].toUpperCase() + titleSplit[i].slice(1).toLowerCase());
+    } else if (titleSplit[i + 1].toLowerCase() === 'developers') {
+      titleSplit.splice(i, 1, titleSplit[i][0].toUpperCase() + titleSplit[i].slice(1).toLowerCase());
     }
   }
-  return upperCaseWordsInArray.join(' ');
+  var modTitle = titleSplit.join(' ');
+  for (var j = 0; j < modTitle.length; j++) {
+    if (modTitle[j] === ':') {
+      modTitle = modTitle.slice(0, j + 1) + ' ' + modTitle[j + 2].toUpperCase() + modTitle.slice(j + 3, modTitle.length);
+    } else if (modTitle[j] === '-') {
+      modTitle = modTitle.slice(0, j + 1) + modTitle[j + 1].toUpperCase() + modTitle.slice(j + 2, modTitle.length);
+    }
+  }
+  output = modTitle[0].toUpperCase() + modTitle.slice(1);
+  return output;
 }
-
-// console.log(title[0].toUpperCase());
-// var output = '';
-// var currentWord = '';
-// for (var i = 0; i < title.length; i++) {
-// if (title[i] !== ' ') {
-//   currentWord = title[0].toUpperCase() + title.slice(1).toLowerCase();
-//   console.log(currentWord);
-// }
-// }
-// output += currentWord;
-// return output;
-// else {
-//   output += currentWord + ' ';
-//   currentWord = '';
-// }
-
-// var output = '';
-// var currentWord = '';
-// for (var i = 0; i < title.length; i++) {
-//   if (title[i] !== ' ') {
-//     currentWord += title[0].toUpperCase() + currentWord;
-//   } else {
-//     output = currentWord + ' ';
-//     currentWord = '';
-//   }
-// }
-// output += currentWord;
-// return output;
-// var output = [];
-// var titleInArray = title.split(' ');
-// for (var i = 0; i < titleInArray.length; i++) {
-//   console.log(titleInArray[i]);
-// for (var i = 0; i < title.length; i++) {
-//   if (title[i].toLowerCase() === 'javascript') {
-//     currentWord += 'JavaScript';
-//   } else if (title[i].toLowerCase() === 'api') {
-//     currentWord += 'API';
-//   } else if (title[i] !== ' ') {
-//     currentWord += title.slice(0, 1).toUpperCase() + title.slice(1, i);
-//   } else {
-//     output += currentWord + ' ';
-//     currentWord = '';
-//   }
-// }
-// output += currentWord;
-// return output;
-
-// var output = '';
-// var currentWord = '';
-// for (var i = 0; i < title.length; i++) {
-//   if (title[i] !== ' ') {
-//     currentWord = title[0].toUpperCase() + title.slice(1).toLowerCase();
-//     console.log(currentWord);
-//   }
-// }
-
-// console.log(upperCaseWordsInArray);
-// var output = upperCaseWordsInArray.join(' ');
-// return output;
-// console.log(upperCaseWordsInArray.length);
-// for (var j = 0; j < upperCaseWordsInArray.length; j++) {
-//   if (upperCaseWordsInArray[j].length < 4) {
-//     upperCaseWordsInArray[j].toLowerCase();
-//   }
-// }
-// console.log(upperCaseWordsInArray);
-// var output = upperCaseWordsInArray.join(' ');
-// for (var j = 0; j < output.length; j++) {
-//   if ()
-// }
