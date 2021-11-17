@@ -1,4 +1,5 @@
 /* exported equal */
+
 // if the length of the first list and second list are not the same
 //  give back false
 //  else if the first item on first list and first item on second list are not the same
@@ -7,6 +8,7 @@
 //  if the second list of items does not include the first list of items
 //    give back false
 //  give back grue
+
 function equal(first, second) {
   if (first.length !== second.length) {
     return false;
