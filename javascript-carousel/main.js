@@ -26,12 +26,12 @@ function clickButtons(event) {
   if (!event.target.matches('button')) {
     return;
   }
-  for (var j = 0; j < $buttonNodeList.length; j++) {
-    if (event.target === $buttonNodeList[j]) {
-      $buttonNodeList[j].className = 'black';
-    } else {
-      $buttonNodeList[j].className = 'white';
-    }
+  if (event.target.getAttribute('dataid') < currentDataNumber) {
+    currentDataNumber--;
+    changeButtonColor();
+  } else {
+    currentDataNumber++;
+    changeButtonColor();
   }
   var $dataViewEventTarget = event.target.getAttribute('data-view');
   for (var i = 0; i < $imgNodeList.length; i++) {
