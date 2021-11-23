@@ -20,8 +20,36 @@
 // uppercase the first letter of the modded title, and assign it to output storage
 // give back output
 
+// function titleCase(title) {
+//   var output = '';
+//   var titleSplit = title.split(' ');
+//   for (var i = 0; i < titleSplit.length; i++) {
+//     if (titleSplit[i].toLowerCase() === 'api') {
+//       titleSplit.splice(i, 1, 'API');
+//     } else if (titleSplit[i].toLowerCase() === 'javascript') {
+//       titleSplit.splice(i, 1, 'JavaScript');
+//     } else if (titleSplit[i].toLowerCase() === 'javascript:') {
+//       titleSplit.splice(i, 1, 'JavaScript:');
+//     } else if (titleSplit[i].length > 3) {
+//       titleSplit.splice(i, 1, titleSplit[i][0].toUpperCase() + titleSplit[i].slice(1).toLowerCase());
+//     } else if (titleSplit[i + 1].toLowerCase() === 'developers') {
+//       titleSplit.splice(i, 1, titleSplit[i][0].toUpperCase() + titleSplit[i].slice(1).toLowerCase());
+//     }
+//   }
+//   var modTitle = titleSplit.join(' ');
+//   for (var j = 0; j < modTitle.length; j++) {
+//     if (modTitle[j] === ':') {
+//       modTitle = modTitle.slice(0, j + 1) + ' ' + modTitle[j + 2].toUpperCase() + modTitle.slice(j + 3, modTitle.length);
+//     } else if (modTitle[j] === '-') {
+//       modTitle = modTitle.slice(0, j + 1) + modTitle[j + 1].toUpperCase() + modTitle.slice(j + 2, modTitle.length);
+//     }
+//   }
+//   output = modTitle[0].toUpperCase() + modTitle.slice(1);
+//   return output;
+// }
+
 function titleCase(title) {
-  var output = '';
+  // var ouput = '';
   var titleSplit = title.split(' ');
   for (var i = 0; i < titleSplit.length; i++) {
     if (titleSplit[i].toLowerCase() === 'api') {
@@ -30,20 +58,12 @@ function titleCase(title) {
       titleSplit.splice(i, 1, 'JavaScript');
     } else if (titleSplit[i].toLowerCase() === 'javascript:') {
       titleSplit.splice(i, 1, 'JavaScript:');
-    } else if (titleSplit[i].length > 3) {
-      titleSplit.splice(i, 1, titleSplit[i][0].toUpperCase() + titleSplit[i].slice(1).toLowerCase());
-    } else if (titleSplit[i + 1].toLowerCase() === 'developers') {
-      titleSplit.splice(i, 1, titleSplit[i][0].toUpperCase() + titleSplit[i].slice(1).toLowerCase());
+    } else if (titleSplit[i].includes(lowerCaseWords)) {
+      titleSplit.splice(i, 1, titleSplit[i].toLowerCase());
     }
   }
-  var modTitle = titleSplit.join(' ');
-  for (var j = 0; j < modTitle.length; j++) {
-    if (modTitle[j] === ':') {
-      modTitle = modTitle.slice(0, j + 1) + ' ' + modTitle[j + 2].toUpperCase() + modTitle.slice(j + 3, modTitle.length);
-    } else if (modTitle[j] === '-') {
-      modTitle = modTitle.slice(0, j + 1) + modTitle[j + 1].toUpperCase() + modTitle.slice(j + 2, modTitle.length);
-    }
-  }
-  output = modTitle[0].toUpperCase() + modTitle.slice(1);
-  return output;
+  // console.log(titleSplit);
+  // var modTitle = titleSplit.join(' ');
 }
+
+var lowerCaseWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to'];
