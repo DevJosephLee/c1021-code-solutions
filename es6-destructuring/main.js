@@ -14,9 +14,9 @@ const book2 = {
   libraryID: 2345
 };
 
-const { title: titleAlt, author: authorAlt, libraryID: libraryIDAlt } = book2;
+const { title: titleBook2, author: authorBook2, libraryID: libraryIDBook2 } = book2;
 
-console.log(`The title of the book is ${titleAlt}, the author is ${authorAlt}, and the library id is ${libraryIDAlt}`);
+console.log(`The title of the book is ${titleBook2}, the author is ${authorBook2}, and the library id is ${libraryIDBook2}`);
 
 const library = [
   {
