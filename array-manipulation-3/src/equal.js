@@ -1,23 +1,21 @@
 /* exported equal */
 
-// if the length of the first list and second list are not the same
-//  give back false
-//  else if the first item on first list and first item on second list are not the same
-//  give back false
-// look at each item on the first list
-//  if the second list of items does not include the first list of items
-//    give back false
-//  give back grue
+// look at each item of first array, starting from beginning until end
+//  look at each item of second array, starting from the beinning until end
+//    if index of first array at first array is strictly not equal to index of first array at second array
+//      give back false
+//      else if, index of second array at first array is strictly not equal to index of second array at second array
+//      give back false
+// give back true
 
 function equal(first, second) {
-  if (first.length !== second.length) {
-    return false;
-  } else if (first[0] !== second[0]) {
-    return false;
-  }
   for (var i = 0; i < first.length; i++) {
-    if (!second.includes(first[i])) {
-      return false;
+    for (var j = 0; j < second.length; j++) {
+      if (first[i] !== second[i]) {
+        return false;
+      } else if (first[j] !== second[j]) {
+        return false;
+      }
     }
   }
   return true;
