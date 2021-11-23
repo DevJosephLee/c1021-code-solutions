@@ -1,0 +1,58 @@
+.container {
+  height: 600px;
+  border: 5px solid black;
+}
+
+.row {
+  display: flex;
+}
+
+.view {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.margin-top {
+  margin-top: 1rem;
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+i {
+  font-size: 3rem;
+}
+
+button {
+  margin: 0 1rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid black;
+}
+
+i,
+button:hover {
+  cursor: pointer;
+}
+
+img {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
