@@ -2,10 +2,7 @@
 
 // make a storage for output (empty array)
 // make a storage for temp (empty array)
-// if the length of first array is greater than the length of second array
-//    remove the last item from first array
-//    also, if the the length of second array is greater than the length of first array
-//    remove the last item from second array
+// make a storage for the shorter length of first and second
 // look at each item from the first array, starting from beginning until end
 //    assign items from first array to temp
 //    assign same amount of items as first array to second array to temp
@@ -16,12 +13,8 @@
 function zip(first, second) {
   var output = [];
   var temp = [];
-  if (first.length > second.length) {
-    first.pop();
-  } else if (first.length < second.length) {
-    second.pop();
-  }
-  for (var i = 0; i < first.length; i++) {
+  var length = Math.min(first.length, second.length);
+  for (var i = 0; i < length; i++) {
     temp.push(first[i]);
     temp.push(second[i]);
   }
