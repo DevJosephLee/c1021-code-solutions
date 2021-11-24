@@ -6,11 +6,6 @@ const subtract = require('./subtract');
 const numOne = parseInt(process.argv[2]);
 const numTwo = parseInt(process.argv[4]);
 
-module.exports = add;
-module.exports = multiply;
-module.exports = divide;
-module.exports = subtract;
-
 if (process.argv[3] === 'plus') {
   console.log(`result: ${add(numOne, numTwo)}`);
 } else if (process.argv[3] === 'times') {
