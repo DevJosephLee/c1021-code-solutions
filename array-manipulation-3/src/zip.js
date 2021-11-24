@@ -3,7 +3,7 @@
 // make a storage for output (empty array)
 // make a storage for temp (empty array)
 // make a storage for the shorter length of first and second
-// look at each item from the first array, starting from beginning until end
+// look at each item from the first array, starting from beginning until the shorter length between first and second
 //    assign items from first array to temp
 //    assign same amount of items as first array to second array to temp
 // look at each item from temp array, starting from beginning until end, in chuncks of two

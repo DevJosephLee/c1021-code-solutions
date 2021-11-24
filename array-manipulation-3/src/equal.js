@@ -1,7 +1,7 @@
 /* exported equal */
 
 // look at each item of first array, starting from beginning until end
-//  look at each item of second array, starting from the beinning until end
+//  look at each item of second array, starting from the beginning until end
 //    if index of first array at first array is strictly not equal to index of first array at second array
 //      give back false
 //      else if, index of second array at first array is strictly not equal to index of second array at second array
