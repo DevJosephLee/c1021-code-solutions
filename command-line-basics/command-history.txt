@@ -1,0 +1,220 @@
+    1  exit
+    2  whoami
+    3  git config ==global user.name 
+    4  git config ==global user.name "Joseph Lee"
+    5  git config --global user.name 
+    6  git config --global user.name "Joseph Lee"
+    7  git config --global user.email "teddylou0215@gmail.com"
+    8  git config --global --list
+    9  whoami
+   10  cd ~/repos/c1021-code-solutions
+   11  git switch string-manipulation-3
+   12  git add string-manipulation-3
+   13  git commit -m "in progress"
+   14  git switch array-manipulation-3
+   15  git switch master
+   16  cd
+   17  ~/repos
+   18  cd ~/repos
+   19  git clone git@github.com:DevJosephLee/driving-game.git
+   20  ~/repos/driving-game
+   21  git clone git@github.com:DevJosephLee/driving-game.git
+   22  cd driving-game
+   23  git branch issue-1-see-car
+   24  git switch issue-1-see-car
+   25  cd driving-game
+   26  git switch master
+   27  npm ci
+   28  git switch issue-1-see-car
+   29  git status
+   30  git add index.html
+   31  git add main.js
+   32  git add styles.css
+   33  git commit -m "Add green background.#1"
+   34  git add index.html
+   35  git add main.js
+   36  git add styles.css
+   37  git commit -m "Add F1 Car.#2"
+   38  git push origin issue-1-see-car
+   39  git status
+   40  git add styles.css
+   41  git commit -m "remove unnecessary codes#3"
+   42  git push origin issue-1-see-car
+   43  git switch master
+   44  git pull origin master
+   45  git branch issue-2-turn-car
+   46  git switch issue-2-turn-car
+   47  git status
+   48  git add index.html
+   49  git commit -m "Create a data model to indicate which direction the car is facing.#1"
+   50  git push origin issue-2-turn-car
+   51  git status
+   52  git add data.js
+   53  git commit -m " Query the F1 Car.#2"
+   54  git push origin issue-2-turn-car
+   55  git status
+   56  git add data.js
+   57  git add main.js
+   58  git add styles.css
+   59  git commit -m " Add an event listener for 'keydown'.#3"
+   60  git status
+   61  git add main.js
+   62  git add styles.css
+   63  git commit -m "According to the keydown arrows, rotate F1 Car.#4"
+   64  git push origin issue-2-turn-car
+   65  git pull origin master
+   66  git switch master
+   67  git pull origin master
+   68  git branch issue-3-start-car
+   69  git switch issue-3-start-car
+   70  git add data.js
+   71  git commit -m "Add properties for x and y coordinates on data model.#1"
+   72  git push origin issue-3-start-car
+   73  git status
+   74  git add styles.css
+   75  git commit -m "Use absolute positioning on the F1 Car image.#2"
+   76  git push origin issue-3-start-car
+   77  git status
+   78  git add main.js
+   79  git commit -m " Create a movement variable set to 0.#3, Create a setInterval with arguments startCar and 16.#4,  Inside startCar function, increment movement, and set the left offset property to movement and concatenate 'rem'.#5"
+   80  git push origin issue-3-start-car
+   81  git status
+   82  git add main.js
+   83  git commit -m " Inside the data model, xCoordinate will equal to movement.#6"
+   84  git push origin issue-3-start-car
+   85  git switch master
+   86  git pull origin master
+   87  git branch issue-4-stop-car
+   88  git switch issue-4-stop-car
+   89  git status
+   90  git add data.js
+   91  git commit -m " Add a boolean to your data model to indicate whether or not the car is started.#1"
+   92  git status
+   93  git add main.js
+   94  git commit -m "Add event listener for keydown, name function startStopCar.#2"
+   95  git push origin issue-4-stop-car
+   96  git status
+   97  git add main.js
+   98  git commit -m " Inside the StartStopCar function, if the space key is pressed, and car is not started.#3"
+   99  git add main.js
+  100  git commit -m " else if space key is pressed and car is started in data model.#5"
+  101  git push origin issue-4-stop-car
+  102  git add main.js
+  103  git commit -m "clear interval on interval.#6"
+  104  git push origin issue-4-stop-car
+  105  git status
+  106  git add main.js
+  107  git commit -m "and car is stopped in data model.#7"
+  108  git push origin issue-4-stop-car
+  109  git add main.js
+  110  git status
+  111  git commit -m "remove unnecessary codes#8"
+  112  git push origin issue-4-stop-car
+  113  git switch master
+  114  git pull origin master
+  115  git branch issue-5-steer-car
+  116  git switch issue-5-steer-car
+  117  git switch master
+  118  cd
+  119  cd ~/repos/c1021-code-solutions
+  120  git branch http-messages
+  121  git switch http-messages
+  122  git switch master
+  123  cd http-messages
+  124  git switch http-messages
+  125  http http://example.com
+  126  http --verbose http://example.com
+  127  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+  128  http --body GET https://example.com > index.html
+  129  git status
+  130  git add ./
+  131  git status
+  132  git commit -m "Completed http-messages exercise"
+  133  git push origin http-messages
+  134  git switch master
+  135  cd 
+  136  cd ~/repos/c1021-code-solutions
+  137  git pull origin master
+  138  git branch javascript-ajax
+  139  git switch javascript-ajax
+  140  git add javascript-ajax
+  141  git commit -m "Completed javascript-ajax exercise"
+  142  git push origin javascript-ajax
+  143  git add javascript-ajax
+  144  git commit -m "movie data testing"
+  145  git add javascript-ajax
+  146  cd ~/repos/c1021-code-solutions
+  147  git status
+  148  git add es6-arrow-functions
+  149  git commit -m "Completed es6-arrow-functions exercise"
+  150  git push origin es6-arrow-functions
+  151  git status
+  152  git switch master
+  153  git pull origin master
+  154  git status
+  155  whoami
+  156  git branch command-line-basics
+  157  git switch command-line-basics
+  158  cd
+  159  pwd
+  160  cd command-line-basics
+  161  cd ~/repos/c1021-code-solutions
+  162  git switch master
+  163  cd command-line-basics
+  164  pwd
+  165  man man
+  166  man cat
+  167  cat laziness.txt
+  168  cat impatience.txt
+  169  cat hubris.txt
+  170  cat man
+  171  man cat
+  172  cat laziness.txt impatience.txt hubris.txt
+  173  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  174  cat three-virtues.txt
+  175  man pwd
+  176  pwd
+  177  pwd > i-was-here.txt
+  178  ls
+  179  man pwd
+  180  cat i-was-here.txt
+  181  man echo
+  182  echo 'Hello, World!'
+  183  echo 'Hello, World!' > hello.txt
+  184  ls
+  185  cat hello.txt
+  186  man touch
+  187  touch tag-youre-it.txt
+  188  man touch
+  189  touch snoot/boop.txt
+  190  ls
+  191  cat boop.txt
+  192  cat snoot/boop.txt
+  193  ls
+  194  man touch
+  195  man mkdir
+  196  mdkir parent
+  197  mkdir parent
+  198  ls
+  199  mdkir -p parent/child/granchild
+  200  man mkdir
+  201  mkdir -p parent/child/grandchild
+  202  touch parent/child/grandchild.gitkeep
+  203  ls -a
+  204  man mv
+  205  mv pokiemans pokemon
+  206  ls
+  207  man rm
+  208  rm lol.txt
+  209  ls
+  210  man rm
+  211  rm -r kill-me/
+  212  ls
+  213  man cp
+  214  cp and-then.txt no-and-then.txt
+  215  ls
+  216  cat and-then.txt
+  217  cat no-and-then.txt
+  218  man history
+  219  history
+  220  history > command-history-txt
