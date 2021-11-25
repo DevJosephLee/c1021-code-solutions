@@ -10,16 +10,39 @@
 //    assign items from temp, in chuncks of two, to the output array
 // give back output
 
-function zip(first, second) {
-  var output = [];
-  var temp = [];
-  var length = Math.min(first.length, second.length);
-  for (var i = 0; i < length; i++) {
-    temp.push(first[i]);
-    temp.push(second[i]);
-  }
-  for (var j = 0; j < temp.length; j += 2) {
-    output.push(temp.slice(j, j + 2));
-  }
-  return output;
-}
+// function zip(first, second) {
+//   var output = [];
+//   var temp = [];
+//   var length = Math.min(first.length, second.length);
+//   for (var i = 0; i < length; i++) {
+//     temp.push(first[i]);
+//     temp.push(second[i]);
+//   }
+//   for (var j = 0; j < temp.length; j += 2) {
+//     output.push(temp.slice(j, j + 2));
+//   }
+//   return output;
+// }
+
+// function zip(first, second) {
+//   var output = [];
+//   var temp = [];
+//   var length = Math.min(first.length, second.length);
+//   for (var i = 0; i < length; i++) {
+//     console.log(first[i]);
+//     console.log(second[i]);
+//   }
+// }
+
+// function zip(first, second) {
+//   var output = [];
+//   var temp = [];
+//   var index = 0;
+//   var shorterLength = Math.min(first.length, second.length);
+//   while (index !== shorterLength) {
+//     temp.push(first[index], second[index]);
+//     output.push(temp);
+//     index++;
+//   }
+//   console.log(output);
+// }
