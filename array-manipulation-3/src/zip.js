@@ -26,11 +26,10 @@
 
 // function zip(first, second) {
 //   var output = [];
-//   var temp = [];
 //   var length = Math.min(first.length, second.length);
-//   for (var i = 0; i < length; i++) {
-//     console.log(first[i]);
-//     console.log(second[i]);
+//   for (var i = 0; i < length; i += 2) {
+//     console.log(first.slice(i, i + 2));
+//     console.log(second.slice(i, i + 2));
 //   }
 // }
 
