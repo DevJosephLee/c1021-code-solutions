@@ -1,13 +1,14 @@
 const fs = require('fs');
 
-fs.writeFile(process.argv[3], fs.readFile(process.argv[2], 'utf8', (err, data) => {
+fs.readFile(process.argv[2], 'utf8', (err, data) => {
   if (err) {
-    throw err;
+    console.error(err);
+    process.exit(1);
   }
-  return data;
-}),
-err => {
-  if (err) {
-    throw err;
-  }
+  fs.writeFile(process.argv[3], data, err => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+  });
 });
