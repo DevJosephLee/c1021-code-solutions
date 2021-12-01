@@ -2,23 +2,19 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
 var players = [{
   name: 'addy',
-  hand1: null,
-  hand2: null,
+  hand: [],
   score: 0
 }, {
   name: 'david',
-  hand1: null,
-  hand2: null,
+  hand: [],
   score: 0
 }, {
   name: 'jay',
-  hand1: null,
-  hand2: null,
+  hand: [],
   score: 0
 }, {
   name: 'john',
-  hand1: null,
-  hand2: null,
+  hand: [],
   score: 0
 }];
 
@@ -41,14 +37,49 @@ function generateDeck() {
 
 var shuffledDeck = _.shuffle(generateDeck());
 
-players[0].hand1 = shuffledDeck[0];
-players[0].hand2 = shuffledDeck[1];
-players[1].hand1 = shuffledDeck[2];
-players[1].hand2 = shuffledDeck[3];
-players[2].hand1 = shuffledDeck[4];
-players[2].hand2 = shuffledDeck[5];
-players[3].hand1 = shuffledDeck[6];
-players[3].hand2 = shuffledDeck[7];
+players[0].hand[0] = shuffledDeck[0];
+players[0].hand[1] = shuffledDeck[1];
+players[1].hand[0] = shuffledDeck[2];
+players[1].hand[1] = shuffledDeck[3];
+players[2].hand[0] = shuffledDeck[4];
+players[2].hand[1] = shuffledDeck[5];
+players[3].hand[0] = shuffledDeck[6];
+players[3].hand[1] = shuffledDeck[7];
+
+function calculateScore() {
+  for (var i = 0; i < players.length; i++) {
+    for (var j = 0; j < players[i].hand.length; j++) {
+      if (players[i].hand[j] === 'J') {
+        players[i].score = 10 + players[i].hand[j];
+      }
+    }
+  }
+}
+
+calculateScore();
+
+// function decideWinner() {
+//   var scores = [];
+//   for (var i = 0; i < players.length; i++) {
+//     scores.push(players[i].score);
+//   }
+//   var indexOfWinner = scores.indexOf(Math.max.apply(null, scores));
+//   console.log('The winner is ' + players[indexOfWinner].name + ' with a score of ' + Math.max.apply(null, scores));
+// }
+
+// decideWinner();
+
+// if (players[i].hand1.rank === 'J' || players[i].hand2.rank === 'J') {
+//   players[i].score += 10;
+// } else if (players[i].hand1.rank === 'Q' || players[i].hand2.rank === 'Q') {
+//   players[i].score += 10;
+// } else if (players[i].hand1.rank === 'K' || players[i].hand2.rank === 'K') {
+//   players[i].score += 10;
+// } else if (players[i].hand1.rank === 'A' || players[i].hand2.rank === 'A') {
+//   players[i].score += 11;
+// } else {
+//   players[i].score = players[i].hand1.rank + players[i].hand2.rank;
+// }
 
 // function calculateScore() {
 //   for (var i = 0; i < deck.length; i++) {
@@ -69,23 +100,3 @@ players[3].hand2 = shuffledDeck[7];
 // }
 
 // calculateScore();
-
-function calculateScore() {
-  for (var i = 0; i < players.length; i++) {
-    // console.log(players[i].hand1.rank + players[i].hand2.rank);
-    console.log(players[i].score);
-  }
-}
-
-calculateScore();
-
-// function decideWinner() {
-//   var scores = [];
-//   for (var i = 0; i < players.length; i++) {
-//     scores.push(players[i].score);
-//   }
-//   var indexOfWinner = scores.indexOf(Math.max.apply(null, scores));
-//   console.log('The winner is ' + players[indexOfWinner].name + ' with a score of ' + Math.max.apply(null, scores));
-// }
-
-// decideWinner();
