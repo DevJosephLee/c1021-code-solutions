@@ -56,7 +56,7 @@ app.post('/api/notes', (req, res) => {
   }
   const data = jsonData;
   const stringifiedData = JSON.stringify(data, null, 2);
-  fs.writeFile('/horses/data.json', stringifiedData, err => {
+  fs.writeFile('data.json', stringifiedData, err => {
     if (err) {
       console.error(err);
       res.status(500);
@@ -82,15 +82,12 @@ app.delete('/api/notes/:id', (req, res) => {
       var temp = true;
     }
   }
-  if (temp) {
-    delete notes[id];
-    res.sendStatus(204);
+  if (!temp) {
+    res.status(404);
+    res.json({ error: 'cannot find note with id ' + id });
   } else if (req.params.id <= 0 || Number.isInteger(id) !== true) {
     res.status(400);
     res.json({ error: 'id must be a postive integer' });
-  } else {
-    res.status(404);
-    res.json({ error: 'cannot find note with id ' + id });
   }
   const data = jsonData;
   const stringifiedData = JSON.stringify(data, null, 2);
@@ -99,6 +96,9 @@ app.delete('/api/notes/:id', (req, res) => {
       console.error(err);
       res.status(500);
       res.json({ error: 'An unexpected error has occurred.' });
+    } else {
+      delete notes[id];
+      res.sendStatus(204);
     }
   });
 });
@@ -113,8 +113,6 @@ app.put('/api/notes/:id', (req, res) => {
   if (temp) {
     req.body.id = id;
     notes[id] = req.body;
-    res.status(200);
-    res.json(req.body);
   } else if (req.params.id <= 0 || Number.isInteger(id) !== true) {
     res.status(400);
     res.json({ error: 'id must be a postive integer' });
@@ -132,6 +130,9 @@ app.put('/api/notes/:id', (req, res) => {
       console.error(err);
       res.status(500);
       res.json({ error: 'An unexpected error has occurred.' });
+    } else {
+      res.status(200);
+      res.json(req.body);
     }
   });
 });
