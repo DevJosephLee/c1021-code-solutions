@@ -1,0 +1,11 @@
+                              List of databases
+   Name    |   Owner   | Encoding | Collate | Ctype |    Access privileges    
+-----------+-----------+----------+---------+-------+-------------------------
+ josephlee | josephlee | UTF8     | C       | C     | 
+ postgres  | josephlee | UTF8     | C       | C     | 
+ template0 | josephlee | UTF8     | C       | C     | =c/josephlee           +
+           |           |          |         |       | josephlee=CTc/josephlee
+ template1 | josephlee | UTF8     | C       | C     | =c/josephlee           +
+           |           |          |         |       | josephlee=CTc/josephlee
+(4 rows)
+
