@@ -1,0 +1,20 @@
+             List of relations
+ Schema |     Name     | Type  |   Owner   
+--------+--------------+-------+-----------
+ public | actors       | table | josephlee
+ public | addresses    | table | josephlee
+ public | castMembers  | table | josephlee
+ public | cities       | table | josephlee
+ public | countries    | table | josephlee
+ public | customers    | table | josephlee
+ public | filmCategory | table | josephlee
+ public | films        | table | josephlee
+ public | genres       | table | josephlee
+ public | inventory    | table | josephlee
+ public | languages    | table | josephlee
+ public | payments     | table | josephlee
+ public | rentals      | table | josephlee
+ public | staff        | table | josephlee
+ public | stores       | table | josephlee
+(15 rows)
+
