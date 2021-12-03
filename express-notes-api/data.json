@@ -1,27 +1,17 @@
 {
-  "nextId": 21,
+  "nextId": 30,
   "notes": {
-    "6": {
-      "content": "testing",
-      "id": 6
+    "27": {
+      "content": "in-n-out",
+      "id": 27
     },
-    "9": {
-      "id": 9
+    "28": {
+      "content": "dave's hot chicken",
+      "id": 28
     },
-    "17": {
-      "content": "testing testing",
-      "id": 17
-    },
-    "18": {
-      "content": "testing1",
-      "id": 18
-    },
-    "19": {
-      "content": "testing2",
-      "id": 19
-    },
-    "20": {
-      "id": 20
+    "29": {
+      "content": "jack-in-the-box",
+      "id": 29
     }
   }
 }
