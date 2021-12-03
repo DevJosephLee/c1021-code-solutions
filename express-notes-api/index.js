@@ -79,7 +79,7 @@ app.put('/api/notes/:id', (req, res) => {
     notes[id] = req.body;
   }
   const data = jsonData;
-  fs.writeFile('derp/data.json', JSON.stringify(data, null, 2), err => {
+  fs.writeFile('data.json', JSON.stringify(data, null, 2), err => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: 'An unexpected error has occurred' });
