@@ -49,7 +49,24 @@ players[3].hand[1] = shuffledDeck[7];
 function calculateScore() {
   for (var i = 0; i < players.length; i++) {
     players[i].score = players[i].hand[0].rank + players[i].hand[1].rank;
-    console.log(players[i].score);
+    // if (players[i].score.length === 3) {
+    //   return;
+    // }
+    if (typeof players[i].score === 'string') {
+      var notStrings = players[i].score;
+    }
+    for (var j = 0; j < notStrings.length; j++) {
+      // if (playersScoreSplit[j] === 'J') {
+      //   playersScoreSplit[j] = 10;
+      // } else if (playersScoreSplit[j] === 'Q') {
+      //   playersScoreSplit[j] = 10;
+      // } else if (playersScoreSplit[j] === 'K') {
+      //   playersScoreSplit[j] = 10;
+      // } else if (playersScoreSplit[j] === 'A') {
+      //   playersScoreSplit[j] = 11;
+      // }
+      console.log(notStrings[j]);
+    }
   }
 }
 
