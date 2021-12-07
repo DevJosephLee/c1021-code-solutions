@@ -33,5 +33,3 @@ function haveD(name) {
     return name;
   }
 }
-
-console.log(names.filter(haveD));
