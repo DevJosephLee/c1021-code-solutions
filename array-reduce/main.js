@@ -23,30 +23,26 @@ const traits = [
   { trainer: 'ash' }
 ];
 
-function sum(previousValue, currentValue) {
-  return previousValue + currentValue;
-}
+const sum = numbers.reduce((a, b) => {
+  return a + b
+})
 
-function product(previousValue, currentValue) {
-  return previousValue * currentValue;
-}
+const product = numbers.reduce((a, b) => {
+  return a * b
+})
 
+const balance = account.reduce((sum, i) => {
+  if (i.type === 'deposit') {
+    sum += i.amount;
+  } else {
+    sum -= i.amount;
+  }
+  return sum;
+}, 0)
 
-function balance(previousValue, currentValue) {
-  // const negatize = account.map(account => {
-  //   if (account.type === 'withdrawal') {
-  //     return -account.amount;
-  //   } else {
-  //     return account.amount;
-  //   }
-  // })
-  // return previousValue + currentValue.amount;
-  return previousValue
-}
-
-const composite = traits.reduce((a, b) => {
-  Object.keys(a)
+const composite = traits.reduce((a, i) => {
+  const keys = Object.keys(i);
+  const values = Object.values(i).pop();
+  a[keys] = values;
   return a
 }, {})
-
-console.log(composite);
