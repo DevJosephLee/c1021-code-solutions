@@ -76,11 +76,6 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
       error: 'score must be a positive integer from 0 to 100'
     });
     return;
-  } else if (!Number.isInteger(score)) {
-    res.status(400).json({
-      error: '"score" must be a positive integer'
-    });
-    return;
   } else if (!Number.isInteger(gradeId) || gradeId <= 0) {
     res.status(400).json({
       error: '"gradeId" must be a positive integer'
@@ -97,7 +92,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
   const params = [req.body.name, req.body.course, req.body.score, req.params.gradeId];
   db.query(sql, params)
     .then(result => {
-      const grade = result.rows[0];
+      const grade = result.rows;
       if (!grade) {
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${gradeId}`
