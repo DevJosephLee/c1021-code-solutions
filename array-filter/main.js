@@ -13,23 +13,29 @@ const names = [
 ];
 
 function evenNumbers(num) {
-  if (num % 2 === 0) {
-    return num;
+  if (num % 2 !== 0) {
+    return false;
   }
+  return true;
 }
 
 function overFive(num) {
-  return num > 5;
+  if (num < 5 && num.includes(0)) {
+    return false;
+  }
+  return true;
 }
 
 function startWithE(name) {
-  if (name[0] === 'E') {
-    return name;
+  if (name[0] !== 'E') {
+    return false;
   }
+  return true;
 }
 
 function haveD(name) {
-  if (name.includes('d') || name.includes('D')) {
-    return name;
+  if (!name.includes('d') || !name.includes('D')) {
+    return false;
   }
+  return true;
 }
