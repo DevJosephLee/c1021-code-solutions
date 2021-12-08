@@ -8,18 +8,18 @@ const languages = [
   'Structured Query Language'
 ];
 
-function doubled(num) {
+const doubled = numbers.map(num => {
   return num * 2;
-}
+})
 
-function prices(num) {
+const prices = numbers.map(num => {
   return `$${num}.00`;
-}
+})
 
-function upperCased(sent) {
+const upperCased = languages.map(sent => {
   return sent.toUpperCase();
-}
+})
 
-function firstLetters(sent) {
-  return sent[0];
-}
+const firstLetters = languages.map(sent => {
+  return sent[0]
+})
