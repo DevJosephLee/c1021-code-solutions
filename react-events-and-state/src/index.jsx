@@ -5,7 +5,7 @@ class CustomButton extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state = {isClicked: false};
+    this.state = { isClicked: false };
   }
 
   handleClick() {
@@ -24,7 +24,6 @@ class CustomButton extends React.Component {
       <div>
         {button}
       </div>
-
     )
   }
 }
