@@ -93,6 +93,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
            "course" = $2,
            "score" = $3
      where "gradeId" = $4
+     returning *;
   `
   const params = [req.body.name, req.body.course, req.body.score, req.params.gradeId];
   db.query(sql, params)
@@ -103,7 +104,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
           error: `Cannot find grade with "gradeId" ${gradeId}`
         });
       } else {
-        res.status(200).json(grade);
+        res.status(200).json(req.body);
       }
     })
     .catch(err => {
@@ -126,6 +127,7 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
   const sql = `
     delete from "grades"
     where "gradeId" = $1
+    returning *;
   `;
   const params = [gradeId];
   db.query(sql, params)
@@ -147,44 +149,6 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
     })
 })
 
-app.listen(8081, () => {
-  console.log('Express server listening on port 8081');
-})
-
-
-app.get('/api/grades/:gradeId', (req, res, next) => {
-  const gradeId = Number(req.params.gradeId);
-  if (!Number.isInteger(gradeId) || gradeId <= 0) {
-    res.status(400).json({
-      error: '"gradeId" must be a positive integer'
-    });
-    return;
-  }
-  const sql = `
-    Select "gradeId",
-           "name",
-           "course",
-           "score",
-           "createdAt"
-      from "grades"
-     where "gradeId" = $1
-`;
-  const params = [gradeId];
-  db.query(sql, params)
-    .then(result => {
-      const grade = result.rows[0];
-      if (!grade) {
-        res.status(404).json({
-          error: `Cannot find grade with "gradeId" ${gradeId}`
-        });
-      } else {
-        res.status(200).json(grade);
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({
-        error: 'An unexpected error occurred.'
-      })
-    })
+app.listen(3000, () => {
+  console.log('Express server listening on port 3000');
 })
