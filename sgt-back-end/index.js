@@ -49,11 +49,12 @@ app.post('/api/grades', (req, res, next) => {
   const sql = `
     insert into "grades" ("name", "course", "score")
     values ($1, $2, $3)
+    returning *
   `;
   const params = [req.body.name, req.body.course, req.body.score];
   db.query(sql, params)
     .then(result => {
-      res.status(201).json(req.body)
+      res.status(201).json(result.rows[0]);
     })
     .catch(err => {
       console.error(err);
@@ -104,7 +105,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
           error: `Cannot find grade with "gradeId" ${gradeId}`
         });
       } else {
-        res.status(200).json(req.body);
+        res.status(200).json(result.rows[0]);
       }
     })
     .catch(err => {
