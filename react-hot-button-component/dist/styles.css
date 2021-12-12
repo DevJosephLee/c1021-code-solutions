@@ -1,0 +1,35 @@
+button {
+  width: 10rem;
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.purple {
+  background-color: #351C74;
+  color: white;
+}
+
+.light-purple {
+  background-color: #674EA7;
+  color: white;
+}
+
+.red {
+  background-color: #E06666;
+  color: white;
+}
+
+.orange {
+  background-color: #F6B26A;
+  color: black;
+}
+
+.yellow {
+  background-color: #FFFF00;
+  color: black;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
