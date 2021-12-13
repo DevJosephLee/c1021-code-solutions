@@ -1,0 +1,40 @@
+.row {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+button {
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+}
+
+.button-on {
+  position: absolute;
+  left: 5.8rem;
+  border-radius: 50%;
+
+}
+
+.button-off {
+  border-radius: 50%;
+}
+
+.on,
+.off {
+  width: 139px;
+  height: 3rem;
+  border-radius: 25px;
+  border: black 1px solid;
+  margin-right: 1rem;
+}
+
+.on {
+  background-color: #6AA74F;
+
+}
+
+.off {
+  background-color: #E2E2E2;
+}
