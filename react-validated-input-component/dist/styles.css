@@ -1,0 +1,16 @@
+p {
+  color: red;
+  font-size: 0.85rem;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.margin-right {
+  margin-right: 1rem;
+}
