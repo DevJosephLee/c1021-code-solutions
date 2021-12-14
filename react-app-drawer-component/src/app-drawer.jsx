@@ -24,7 +24,7 @@ class AppDrawer extends React.Component {
     return(
       <div>
         <i className="fas fa-bars" onClick={this.state.drawerOpened === false ? this.open : this.close}></i>
-        <div className={`height-1000 ${drawerClass}`}>
+        <div className={`height-full ${drawerClass}`}>
           <div onClick={this.close} className="overlay">
             <div className="modal">
               <h1>Menu</h1>

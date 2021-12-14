@@ -19,7 +19,7 @@ a {
 .modal {
   background-color: white;
   width: 300px;
-  height: 1000px;
+  height: 100vh;
   border: 1px black solid;
   padding: 1rem;
 }
@@ -33,6 +33,6 @@ a {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.height-1000 {
-  height: 1000px;
+.height-full {
+  height: 100vh;
 }
