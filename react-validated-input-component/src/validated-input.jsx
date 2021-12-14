@@ -18,49 +18,20 @@ class ValidatedInput extends React.Component {
     event.preventDefault();
   }
   render() {
-    if (this.state.password.length === 0) {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Password
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Password
+          <div>
+            <input type="password" value={this.state.password} onChange={this.handleChange} className="margin-right"></input>
+            <FontAwesomeIcon icon={this.state.password.length < 8 ? faTimes : faCheck} className={this.state.password.length < 8 ? "red" : "green"} />
             <div>
-              <input type="password" value={this.state.password} onChange={this.handleChange} className="margin-right"></input>
-              <FontAwesomeIcon icon={faTimes} className="red" />
-              <div>
-                <p className="error-message">A password is required.</p>
-              </div>
+              <p className={this.state.password.length < 8 ? "error-message" : "hidden"} >{this.state.password.length === 0 ? 'A password is required.' : 'Your password is too short.'}</p>
             </div>
-          </label>
-        </form>
-      )
-    } else if (this.state.password.length < 8) {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Password
-            <div>
-              <input type="password" value={this.state.password} onChange={this.handleChange} className="margin-right"></input>
-              <FontAwesomeIcon icon={faTimes} className="red" />
-              <div>
-                <p className="error-message">Your password is too short.</p>
-              </div>
-            </div>
-          </label>
-        </form>
-      )
-    } else {
-      return(
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Password
-            <div>
-              <input type="password" value={this.state.password} onChange={this.handleChange} className="margin-right"></input>
-              <FontAwesomeIcon icon={faCheck} className="green" />
-            </div>
-          </label>
-        </form>
-      )
-    }
+          </div>
+        </label>
+      </form>
+    )
   }
 }
 
