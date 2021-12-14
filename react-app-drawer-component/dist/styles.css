@@ -1,0 +1,38 @@
+body {
+  position: relative;
+}
+
+i,
+a {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.modal {
+  background-color: white;
+  width: 300px;
+  height: 100vh;
+  border: 1px black solid;
+  padding: 1rem;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.height-full {
+  height: 100vh;
+}
