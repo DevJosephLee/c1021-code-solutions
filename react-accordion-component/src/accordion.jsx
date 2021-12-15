@@ -11,28 +11,28 @@ class Accordion extends React.Component {
     super(props);
     this.state = { openTopicIndex: null };
     this.handleClick = this.handleClick.bind(this);
+    this.handleDoubleClick = this.handleDoubleClick.bind(this);
   }
   handleClick(event) {
-    // if (this.state.openTopicIndex === null) {
-    //   this.setState({openTopicIndex: 1});
-    // } else {
-    //   this.setState({openTopicIndex: null});
-    // }
     if (event.target.className === '0') {
-      this.setState({openTopicIndex: 0});
+      this.setState({ openTopicIndex: 0 });
     } else if (event.target.className === '1') {
-      this.setState({openTopicIndex: 1});
+      this.setState({ openTopicIndex: 1 });
     } else if (event.target.className === '2') {
-      this.setState({ openTopicIndex: 2});
+      this.setState({ openTopicIndex: 2 });
     }
-    console.log(event.target.className)
+  }
+  handleDoubleClick() {
+    if (Number(event.target.className) === Number(this.state.openTopicIndex)) {
+      this.setState({ openTopicIndex: null });
+    }
   }
   render() {
     return (
       topics.map((topic, index) => {
         return (
           <div key={index}>
-            <button className={index} onClick={this.handleClick}>{topic.title}</button>
+            <button className={index} onClick={this.state.openTopicIndex === null ? this.handleClick : this.handleDoubleClick}>{topic.title}</button>
             <p className={this.state.openTopicIndex === index ? "description" : 'hidden'}>{topic.description}</p>
           </div>
         )
@@ -40,8 +40,16 @@ class Accordion extends React.Component {
     )
   }
 }
+// openTopicIndex is null
+// when the button is clicked, openTopicIndex changes to index #
+// if openTopicIndex matches the button clicked
+//  make openTopicIndex null
 
 export default Accordion
+
+// else if (topics.includes(topics[Number(event.target.className)])) {
+//   this.setState({ openTopicIndex: null });
+// }
 // if (this.state.openTopicIndex === event.target.className) {
 //   this.setState({ openTopicIndex: null });
 // } else
