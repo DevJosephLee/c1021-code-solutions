@@ -11,10 +11,11 @@ class Accordion extends React.Component {
     super(props);
     this.state = { openTopicIndex: null };
     this.handleClick = this.handleClick.bind(this);
-    this.handleDoubleClick = this.handleDoubleClick.bind(this);
   }
   handleClick(event) {
-    if (event.target.className === '0') {
+    if (this.state.openTopicIndex !== null && Number(event.target.className) === Number(this.state.openTopicIndex)) {
+      this.setState({ openTopicIndex: null });
+    } else if (event.target.className === '0') {
       this.setState({ openTopicIndex: 0 });
     } else if (event.target.className === '1') {
       this.setState({ openTopicIndex: 1 });
@@ -22,17 +23,12 @@ class Accordion extends React.Component {
       this.setState({ openTopicIndex: 2 });
     }
   }
-  handleDoubleClick() {
-    if (Number(event.target.className) === Number(this.state.openTopicIndex)) {
-      this.setState({ openTopicIndex: null });
-    }
-  }
   render() {
     return (
       topics.map((topic, index) => {
         return (
           <div key={index}>
-            <button className={index} onClick={this.state.openTopicIndex === null ? this.handleClick : this.handleDoubleClick}>{topic.title}</button>
+            <button className={index} onClick={this.handleClick}>{topic.title}</button>
             <p className={this.state.openTopicIndex === index ? "description" : 'hidden'}>{topic.description}</p>
           </div>
         )
@@ -40,82 +36,5 @@ class Accordion extends React.Component {
     )
   }
 }
-// openTopicIndex is null
-// when the button is clicked, openTopicIndex changes to index #
-// if openTopicIndex matches the button clicked
-//  make openTopicIndex null
 
 export default Accordion
-
-// else if (topics.includes(topics[Number(event.target.className)])) {
-//   this.setState({ openTopicIndex: null });
-// }
-// if (this.state.openTopicIndex === event.target.className) {
-//   this.setState({ openTopicIndex: null });
-// } else
-// function Accordion(props) {
-//   const topics = this.topics;
-//   const listTopics = topics.map((topic, index) =>
-//     <button key={index}>
-//       {topic.title}
-//     </button>
-//   );
-//   return (
-//     <div>
-//       {listTopics}
-//     </div>
-//   )
-// }
-
-// function Accordion(props) {
-//   <div>
-//     {
-//       topics.map((topic, index) => {
-//         return <p key={index}>{topic}</p>;
-//       })
-//     }
-//   </div>
-// }
-
-// htmlClick() {
-//   this.setState({ openTopicIndex: 1 })
-// }
-// cssClick() {
-//   this.setState({ openTopicIndex: 2 })
-// }
-// jsClick() {
-//   this.setState({ openTopicIndex: 3 })
-// }
-
-// className = { this.state.htmlDescOpen ? 'description' : 'hidden' }
-// class Accordion extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {htmlDescOpen: false, cssDescOpen: false, jsDescOpen: false};
-//     this.htmlClick = this.htmlClick.bind(this);
-//     this.cssClick = this.cssClick.bind(this);
-//     this.jsClick = this.jsClick.bind(this);
-//   }
-//   htmlClick() {
-//     if (this.state.htmlDescOpen === true) {
-//       this.setState({ htmlDescOpen: false, cssDescOpen: false, jsDescOpen: false });
-//     } else {
-//       this.setState({ htmlDescOpen: true, cssDescOpen: false, jsDescOpen: false });
-//     }
-//   }
-//   cssClick() {
-//     if (this.state.cssDescOpen === true) {
-//       this.setState({ htmlDescOpen: false, cssDescOpen: false, jsDescOpen: false });
-//     } else {
-//       this.setState({ htmlDescOpen: false, cssDescOpen: true, jsDescOpen: false});
-//     }
-//   }
-//   jsClick() {
-//     if (this.state.jsDescOpen === true) {
-//       this.setState({ htmlDescOpen: false, cssDescOpen: false, jsDescOpen: false });
-//     } else {
-//       this.setState({ htmlDescOpen: false, cssDescOpen: false, jsDescOpen: true });
-//     }
-//   }
-//   render()
-// }
