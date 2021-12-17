@@ -67,7 +67,34 @@ app.post('/api/auth/sign-in', (req, res, next) => {
    *      Catch any error.
    * Catch any error.
    */
-
+  // const sql = `
+  //   select "userId",
+  //          "hashedPassword"
+  //     from "users"
+  //    where "username" = $username
+  // `
+  // const params = [userId, hashedPassword];
+  // db.query(sql, params)
+  //   .then(result => {
+  //     const [user] = result.rows;
+  //     if (!user) {
+  //       throw new ClientError(401, 'invalid login');
+  //     }
+  //     argon2
+  //       .verify(hashedPassword)
+  //       .then(hashedPassword => {
+  //         if (!hashedPassword) {
+  //           throw new ClientError(401, 'invalid login');
+  //         }
+  //         const payload = {
+  //           userId: userId, username: username
+  //         }
+  //         const token = jwt.sign(payload, process.env.TOKEN_SECRET)
+  //         res.status(200).json({token: token, user: payload});
+  //       })
+  //       .catch(err => next(err))
+  //   })
+  //   .catch(err => next(err))
 });
 
 app.use(errorMiddleware);
