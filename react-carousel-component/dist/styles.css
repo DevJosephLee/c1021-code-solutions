@@ -10,7 +10,15 @@
 .justify-center {
   justify-content: center;
 }
-
-.align-center {
+/* .align-center {
   align-items: center;
+} */
+
+i {
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+img {
+  width: 100px;
 }
