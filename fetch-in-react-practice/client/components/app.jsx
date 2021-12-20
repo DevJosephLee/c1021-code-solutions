@@ -78,20 +78,18 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    const stateCopy = Object.assign({}, this.state);
-    stateCopy.todos[todoId - 1] = Object.assign({}, stateCopy.todos[todoId - 1]);
-    if (stateCopy.todos[todoId - 1].isCompleted === false) {
-      stateCopy.todos[todoId - 1].isCompleted = true;
-    } else {
-      stateCopy.todos[todoId - 1].isCompleted = false;
-    }
-    this.setState(stateCopy)
+    const stateCopy = Object.assign([], this.state);
+    stateCopy.todos.map((todo, index) => {
+      if (todoId === todo.todoId) {
+        todo.isCompleted = todo.isCompleted ? false : true
+      }
+    })
     fetch(`api/todos/${todoId}`, {
       method: 'PATCH',
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({isCompleted: this.state.todos[todoId - 1].isCompleted})
+      body: JSON.stringify({isCompleted: stateCopy.isCompleted})
     })
     .then(response => response.json())
     .then(() => {
@@ -116,3 +114,13 @@ export default class App extends React.Component {
     );
   }
 }
+
+
+// const stateCopy = Object.assign([], this.state);
+    // stateCopy.todos[todoId - 1] = Object.assign([], stateCopy.todos[todoId - 1]);
+    // if (stateCopy.todos[todoId - 1].isCompleted === false) {
+    //   stateCopy.todos[todoId - 1].isCompleted = true;
+    // } else {
+    //   stateCopy.todos[todoId - 1].isCompleted = false;
+    // }
+    // this.setState(stateCopy)
