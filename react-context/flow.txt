@@ -1,0 +1,47 @@
+User can sign up:
+- client clicks the sign up button.
+- if client action is 'sign-in', window.location.hash is updated to 'sign-up'.
+- the action Href in url changes from #sign-in to #sign-up.
+- 'hashchange' event is fired.
+- client is directed to the sign up page.
+- the text on submit button, alternative action button, and welcome message changes.
+- client inputs username and password and clicks submit button.
+- the username and password properties are set to client's input on change.
+- a post request is submitted to server from the client and password is hashed.
+- on submit, server posts clients username and hashed password to the database.
+- client receives a response, whether sign up was successful or not.
+
+User can sign in:
+- client clicks the sign in button.
+- if client action is 'sign-up', window.location.hash is updated to 'sign-in'.
+- the action Href in url changes from #sign-up to #sign-in.
+- client is directed to the sign in page.
+- 'hashchange' event is fired.
+- the text on submit button, alternative action button, and welcome message changes.
+- client input username and password and clicks submit button.
+- the username and password properties are set to client's input on change.
+- a post request is submitted to server from the client.
+- since the user property is not null, the sign-in and sign-out buttons in nav-bar is
+replaced with sign-out button.
+- if the client provided username and password match within the database, client is
+issued a token and token stored in local storage.
+- if the username and password do not match, client receives a 400 response.
+- client is directed to the home page.
+
+User can stay signed in (even if they refresh the page):
+- client enters or reloads the page.
+- if there is a token from local storage, decode that token (decodeToken method)
+and assign to user property.
+- if not, set the user property to null.
+- payload object of the client is extracted and parsed.
+- the user property becomes the the user extracted from payload, and isAuthorizing
+property is set to false.
+- client is directed to home page that reflects the payload.
+
+User can sign out:
+- client clicks the sign-out buttom.
+- the token in localstorage is removed.
+- sets the state of user property to null.
+- since the user property is null, the sign-out button in nav-bar is replaced with
+sign-in and sign-out buttons.
+- client is directed to the AuthForm page.
