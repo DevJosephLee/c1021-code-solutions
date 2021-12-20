@@ -1,7 +1,5 @@
 import React from 'react';
 
-let intervalId;
-
 class Carousel extends React.Component {
   constructor(props) {
     super(props)
@@ -11,7 +9,7 @@ class Carousel extends React.Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
   componentDidMount() {
-    intervalId = setInterval(() => {
+    this.intervalId = setInterval(() => {
       if (this.state.currentImageIndex === this.props.pokemons.length - 1) {
         this.setState({ currentImageIndex: -1 })
       }
