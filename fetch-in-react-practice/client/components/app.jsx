@@ -78,26 +78,30 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    const stateCopy = Object.assign([], this.state);
-    stateCopy.todos.map((todo, index) => {
+    // const stateCopy = Object.assign([], this.state);
+    this.state.todos.map((todo, index) => {
       if (todoId === todo.todoId) {
-        todo.isCompleted = todo.isCompleted ? false : true
+        // const newState = ({ isCompleted: todo.isCompleted ? false : true})
+        // todo.isCompleted = todo.isCompleted ? false : true
+        const clickedIndex = index;
+        console.log(clickedIndex);
       }
     })
-    fetch(`api/todos/${todoId}`, {
-      method: 'PATCH',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({isCompleted: stateCopy.isCompleted})
-    })
-    .then(response => response.json())
-    .then(() => {
-      this.setState({todos: [].concat(this.state.todos)});
-    })
-    .catch(err => {
-      console.error('error!', err);
-    })
+
+    // fetch(`api/todos/${todoId}`, {
+    //   method: 'PATCH',
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(newState)
+    // })
+    // .then(response => response.json())
+    // .then(() => {
+    //   this.setState({todos: [].concat(this.state.todos)});
+    // })
+    // .catch(err => {
+    //   console.error('error!', err);
+    // })
   }
 
   render() {
