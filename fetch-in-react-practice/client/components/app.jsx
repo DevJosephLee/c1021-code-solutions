@@ -78,48 +78,30 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    this.state.todos.map((todo, index) => {
-      if (todoId === todo.todoId) {
-        const stateCopy = [].concat(this.state.todos)
-        const newState = {isCompleted: !stateCopy[index].isCompleted}
-        // let object = {isCompleted: !stateCopy.todos[index].isCompleted}
-        // const newState = ({ isCompleted: todo.isCompleted ? false : true})
-        // fetch(`api/todos/${todoId}`, {
-        //   method: 'PATCH',
-        //   headers: {
-        //     "Content-Type": "application/json"
-        //   },
-        //   body: JSON.stringify(newState)
-        // })
-        //   .then(response => response.json())
-        //   .then(() => {
-        //     this.setState({ todos: stateCopy});
-        //   })
-        //   .catch(err => {
-        //     console.error('error!', err);
-        //   })
+    let index;
+    for (let i = 0; i < this.state.todos.length; i++) {
+      if (todoId === this.state.todos[i].todoId) {
+        index = i;
       }
+    }
+    const stateCopy = [].concat(this.state.todos)
+    const newObject = {};
+    newObject.isCompleted = !stateCopy[index].isCompleted;
+    Object.assign(stateCopy[index], newObject);
+    fetch(`api/todos/${todoId}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newObject)
     })
-  // const stateCopy = Object.assign([], this.state);
-  // stateCopy.todos.map((todo, index) => {
-  //   if (todoId === todo.todoId) {
-  //     todo.isCompleted = todo.isCompleted ? false : true
-  //   }
-  // })
-  // fetch(`api/todos/${todoId}`, {
-  //   method: 'PATCH',
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   },
-  //   body: JSON.stringify({ isCompleted: stateCopy.isCompleted })
-  // })
-  //   .then(response => response.json())
-  //   .then(() => {
-  //     this.setState({ todos: [].concat(this.state.todos) });
-  //   })
-  //   .catch(err => {
-  //     console.error('error!', err);
-  //   })
+      .then(response => response.json())
+      .then(result => {
+        this.setState({todos: stateCopy})
+      })
+      .catch(err => {
+        console.error('error:', err)
+      })
   }
 
   render() {
@@ -136,13 +118,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-
-// const stateCopy = Object.assign([], this.state);
-    // stateCopy.todos[todoId - 1] = Object.assign([], stateCopy.todos[todoId - 1]);
-    // if (stateCopy.todos[todoId - 1].isCompleted === false) {
-    //   stateCopy.todos[todoId - 1].isCompleted = true;
-    // } else {
-    //   stateCopy.todos[todoId - 1].isCompleted = false;
-    // }
-    // this.setState(stateCopy)
