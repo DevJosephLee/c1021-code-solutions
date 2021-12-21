@@ -97,7 +97,6 @@ export default class App extends React.Component {
       .then(response => response.json())
       .then(result => {
         stateCopy[index] = result
-        Object.assign(result, newObject)
         this.setState({todos: stateCopy})
       })
       .catch(err => {
