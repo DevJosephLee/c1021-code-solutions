@@ -87,7 +87,6 @@ export default class App extends React.Component {
     const stateCopy = [].concat(this.state.todos)
     const newObject = {};
     newObject.isCompleted = !stateCopy[index].isCompleted;
-    Object.assign(stateCopy[index], newObject);
     fetch(`api/todos/${todoId}`, {
       method: 'PATCH',
       headers: {
@@ -97,6 +96,8 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(result => {
+        stateCopy[index] = result
+        Object.assign(result, newObject)
         this.setState({todos: stateCopy})
       })
       .catch(err => {
