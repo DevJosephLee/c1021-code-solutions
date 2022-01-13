@@ -1,12 +1,15 @@
 /* exported maxValue */
 
 function maxValue(stack) {
-  const values = []
   if (stack.peek() === undefined) {
     return -Infinity
   }
+  var currentStack = stack.peek()
   while (stack.peek() !== undefined) {
-    values.push(stack.pop())
+    var nextStack = stack.pop()
+    if (currentStack < nextStack) {
+      currentStack = nextStack
+    }
   }
-  return Math.max.apply(null, values)
+  return currentStack
 }

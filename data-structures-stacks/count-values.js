@@ -1,9 +1,10 @@
 /* exported countValues */
 
 function countValues(stack) {
-  const values = []
+  var count = 0
   while (stack.peek() !== undefined) {
-    values.push(stack.pop())
+    stack.pop()
+    count++
   }
-  return values.length
+  return count
 }
